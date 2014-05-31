@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 **
-** Copyright 2011, The Android Open Source Project
+** Copyright 2014, The Android Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License")
 ** you may not use this file except in compliance with the License.
@@ -37,13 +37,15 @@
              android:storageDescription="@string/storage_internal"
              android:primary="true"
              android:emulated="true"
-             android:mtpReserve="100" />
+             android:mtpReserve="100" 
+             android:subsystem="fuse" />
 
     <storage android:mountPoint="/storage/sdcard1"
              android:storageDescription="@string/storage_sd_card"
              android:primary="false"
              android:removable="true"
-             android:allowMassStorage="true" />
+             android:allowMassStorage="true"
+             android:subsystem="sd" />
 
     <storage android:mountPoint="/storage/usbdisk"
              android:storageDescription="@string/storage_usb"
