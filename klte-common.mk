@@ -77,7 +77,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/klte-common/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     device/samsung/klte-common/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
     device/samsung/klte-common/keylayout/sec_navigation.kl:system/usr/keylayout/sec_navigation.kl \
-    device/samsung/klte-common/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
+    device/samsung/klte-common/keylayout/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl \
     device/samsung/klte-common/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl
 
 # Ramdisk
