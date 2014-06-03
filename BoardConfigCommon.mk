@@ -105,6 +105,9 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 # of the device.
 MAX_EGL_CACHE_SIZE := 2048*1024
 
+# Vibrator
+BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/samsung/klte/vibrator/tspdrv.c
+
 # Assert
 TARGET_OTA_ASSERT_DEVICE := kltexx,kltespr,kltetmo,kltecan,klteatt,kltevzw,klte
 
