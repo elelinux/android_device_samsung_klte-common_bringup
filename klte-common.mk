@@ -87,6 +87,7 @@ PRODUCT_PACKAGES += \
     init.bt.rc \
     init.carrier.rc \
     init.qcom.rc \
+    init.usb.rc \
     init.qcom.usb.rc \
     init.ril.rc \
     init.target.rc \
