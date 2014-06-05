@@ -74,9 +74,9 @@ BOARD_NFC_HAL_SUFFIX := msm8974
 # Samsung's nonstandard csd-client
 BOARD_HAVE_NEW_QCOM_CSDCLIENT := true
 
-# QCOM support
-TARGET_USES_ION := true
-TARGET_USES_C2D_COMPOSITION := true
+# Flags
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
+
 
 # Audio settings
 BOARD_USES_CUSTOM_AUDIO_PLATFORM_PATH := device/samsung/klte-common/audio/platform
