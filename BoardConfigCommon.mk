@@ -113,10 +113,6 @@ TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_klte
 TARGET_LIBINIT_DEFINES_FILE := device/samsung/klte-common/init/init_klte.c
 
-# PowerHAL
-TARGET_POWERHAL_VARIANT := qcom
-#TARGET_POWERHAL_SET_INTERACTIVE_EXT := device/samsung/klte-common/power/power_ext.c
-
 # Consumerir
 TARGET_PROVIDES_CONSUMERIR_HAL := true
 
