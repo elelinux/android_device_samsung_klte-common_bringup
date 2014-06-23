@@ -87,7 +87,6 @@ PRODUCT_PACKAGES += \
     init.bt.rc \
     init.carrier.rc \
     init.qcom.rc \
-    init.usb.rc \
     init.qcom.usb.rc \
     init.ril.rc \
     init.target.rc \
@@ -205,6 +204,32 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_short_ons_1="" \
     persist.rild.nitz_short_ons_2="" \
     persist.rild.nitz_short_ons_3=""
+
+# System properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.mode_pref_nv10=1 \
+    rild.libargs=-d /dev/smd0 \
+    persist.radio.add_power_save=1 \
+    debug.sensors=1 \
+    debug.composition.type=c2d \
+    debug.disable.bwc=1 \
+    debug.mdpcomp.logs=0 \
+    persist.gps.qc_nlp_in_use=1 \
+    ro.gps.agps_provider=1 \
+    ro.qualcomm.cabl=1 \
+    ro.hdcp2.rx=tz \
+    ro.secwvk=144
+
+# Audio configuration
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qc.sdk.audio.fluencetype=fluence \
+    persist.audio.fluence.voicecall=true \
+    persist.audio.fluence.voicerec=false \
+    persist.audio.fluence.speaker=true \
+    use.voice.path.for.pcm.voip=true \
+    use.dedicated.device.for.voip=true \
+    qcom.hw.aac.encoder=true \
+    tunnel.audio.encode = true
 
 # msm_rng entropy feeder
 PRODUCT_PACKAGES += \

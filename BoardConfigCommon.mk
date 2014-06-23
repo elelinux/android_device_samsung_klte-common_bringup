@@ -25,14 +25,6 @@
 
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/klte-common/include
 
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := MSM8974
-
-# Kernel Configs
-TARGET_KERNEL_SOURCE := kernel/samsung/klte
-TARGET_KERNEL_CONFIG := msm8974_sec_defconfig
-TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
-
 # Kernel
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
 BOARD_KERNEL_BASE := 0x00000000
@@ -40,6 +32,19 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/klte-common/mkbootimg.mk
+
+# Kernel Configs
+TARGET_KERNEL_SOURCE := kernel/samsung/klte
+TARGET_KERNEL_CONFIG := msm8974_sec_defconfig
+TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
+
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := MSM8974
+
+# QCOM
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_USES_QCOM_BSP := true
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
 
 # Graphics
 BOARD_EGL_CFG := device/samsung/klte-common/egl.cfg
@@ -68,15 +73,14 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/klte-common/blueto
 BOARD_BLUEDROID_VENDOR_CONF := device/samsung/klte-common/bluetooth/vnd_klte.txt
 BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := false
 
+# Needed for blobs
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
+
 # NFC
 BOARD_NFC_HAL_SUFFIX := msm8974
 
 # Samsung's nonstandard csd-client
 BOARD_HAVE_NEW_QCOM_CSDCLIENT := true
-
-# Flags
-COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
-
 
 # Audio settings
 BOARD_USES_CUSTOM_AUDIO_PLATFORM_PATH := device/samsung/klte-common/audio/platform
@@ -105,18 +109,18 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 # of the device.
 MAX_EGL_CACHE_SIZE := 2048*1024
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := kltexx,kltespr,kltetmo,kltecan,klteatt,kltevzw,klte
-
-# Vendor Init
-TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_klte
-TARGET_LIBINIT_DEFINES_FILE := device/samsung/klte-common/init/init_klte.c
-
 # Consumerir
 TARGET_PROVIDES_CONSUMERIR_HAL := true
 
 # We don't use old-ass RPC
 TARGET_NO_RPC := true
+
+# PowerHAL
+TARGET_POWERHAL_VARIANT := qcom
+
+# Vendor Init
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_klte
+TARGET_LIBINIT_DEFINES_FILE := device/samsung/klte-common/init/init_klte.c
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/klte-common
