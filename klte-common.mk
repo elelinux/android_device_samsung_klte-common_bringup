@@ -208,7 +208,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # System properties
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.mode_pref_nv10=1 \
-    rild.libargs=-d /dev/smd0 \
     persist.radio.add_power_save=1 \
     debug.sensors=1 \
     debug.composition.type=c2d \
