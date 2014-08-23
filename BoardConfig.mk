@@ -17,8 +17,6 @@
 
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/klte-common/include
 
-TARGET_OTA_ASSERT_DEVICE := kltexx,kltelra,kltespr,kltetmo,kltecan,klteatt,kltevzw,klteusc,kltedv,klteub,klteacg,kltedcm,klte
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
 
