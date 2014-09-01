@@ -534,7 +534,7 @@ typedef struct {
      */
     void  (*init)( AGpsCallbacks* callbacks );
     /**
-     * Notifies that a data connection is available and sets
+     * Notifies that a data connection is available and sets 
      * the name of the APN to be used for SUPL.
      */
     int  (*data_conn_open)( const char* apn );
@@ -543,7 +543,7 @@ typedef struct {
      */
     int  (*data_conn_closed)();
     /**
-     * Notifies that a data connection is not available for AGPS.
+     * Notifies that a data connection is not available for AGPS. 
      */
     int  (*data_conn_failed)();
     /**
