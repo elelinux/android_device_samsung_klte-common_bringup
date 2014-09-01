@@ -68,6 +68,14 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # Power HAL
 TARGET_POWERHAL_VARIANT := qcom
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_LIBINIT_DEFINES_FILE := device/samsung/klte-common/init/init_klte.c
+TARGET_UNIFIED_DEVICE := true
+
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/klte-common
+
 # Recovery
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/klte-common/recovery/recovery_keys.c
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
